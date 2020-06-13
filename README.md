@@ -38,3 +38,18 @@
 ## Confluent Schema Registry
 
 > Confluent Schema Registry provides a serving layer for your metadata. It provides a RESTful interface for storing and retrieving your Avro®, JSON Schema, and Protobuf schemas. It stores a versioned history of all schemas based on a specified subject name strategy, provides multiple compatibility settings and allows evolution of schemas according to the configured compatibility settings and expanded support for these schema types. It provides serializers that plug into Apache Kafka® clients that handle schema storage and retrieval for Kafka messages that are sent in any of the supported formats.
+
+## Confluent Kafka Connect
+
+> Kafka Connect, an open source component of Apache Kafka®, is a framework for connecting Kafka with external systems such as databases, key-value stores, search indexes, and file systems.
+
+| Environment Variable              | Objective                                                                                                                               | Set                                     |
+| --------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------- | --------------------------------------- |
+| CONNECT_BOOTSTRAP_SERVERS         | A host:port pair for establishing the initial connection                                                                                | broker:29092                            |
+| CONNECT_REST_ADVERTISED_HOST_NAME | -                                                                                                                                       | kafka-connect                           |
+| CONNECT_REST_PORT                 | -                                                                                                                                       | 8083                                    |
+| CONNECT_GROUP_ID                  | UID to identify the Connect cluster group worker belongs to.                                                                            | kafka-connect                           |
+| CONNECT_CONFIG_STORAGE_TOPIC      | name of the topic in which to store connector and task configuration data. This must be the same for all workers with the same group.id | \_kafka-connect-configs                 |
+| CONNECT_OFFSET_STORAGE_TOPIC      | The name of the topic in which to store offset data for connectors. This must be the same for all workers with the same group.id        | \_kafka-connect-offsets                 |
+| CONNECT_STATUS_STORAGE_TOPIC      | The name of the topic in which to store state for connectors. This must be the same for all workers with the same group.id              | \_kafka-connect-status                  |
+| CONNECT_KEY_CONVERTER             | This controls the format of the data that will be written to Kafka                                                                      | io.confluent.connect.avro.AvroConverter |
