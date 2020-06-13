@@ -4,6 +4,10 @@
 
 > Zookeeper keeps track of status of the Kafka cluster nodes and it also keeps track of Kafka topics, partitions etc.
 
+## Confluent Broker
+
+> Each Kafka Broker has a unique ID (number). Kafka Brokers contain topic log partitions. Connecting to one broker bootstraps a client to the entire Kafka cluster.
+
 | Environment Variable                           | Objective                                                                 | Set                                                      |
 | ---------------------------------------------- | ------------------------------------------------------------------------- | -------------------------------------------------------- |
 | KAFKA_BROKER_ID                                | -                                                                         | 1                                                        |
