@@ -1,8 +1,22 @@
 # Docker compose explained
 
-## Confluent Zookeeper
+> Docker images used from [Confluentinc](https://github.com/confluentinc/cp-docker-images/)
 
-> Zookeeper keeps track of status of the Kafka cluster nodes and it also keeps track of Kafka topics, partitions etc.
+#### [cp-base-new](https://github.com/confluentinc/common-docker/tree/master/base)
+
+1. Extents and Open JDK image
+2. Installs Python and python tools
+3. Install [confluent docker utils](https://github.com/confluentinc/confluent-docker-utils) used for testing docker images
+4. Removes PIP and git
+5. Remove cached shit from image
+6. Remove requirement.txt file
+7. Extract artifacts downloaded to `/etc/confluent/docker`
+
+## [Confluent Zookeeper](https://github.com/confluentinc/kafka-images/blob/master/zookeeper/Dockerfile.deb8)
+
+> Zookeeper keeps track of status of the Kafka cluster nodes and it also keeps track of Kafka topics, partitions etc. Extends cp-base and installs repos
+
+`VOLUME ["/var/lib/${COMPONENT}/data", "/var/lib/${COMPONENT}/log", "/etc/${COMPONENT}/secrets"]`
 
 ## Confluent Broker
 
